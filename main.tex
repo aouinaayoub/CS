@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 2}
+
+\begin{document}
+
+
+\section{Ex 1 } 
+1) The point i is sampled uniformly in the square so : 
+$$P(S_i=4)= \frac{area of circle}{area of square}= \frac{\pi}{4}$$
+The mean value : 
+$$ m= \sum k P(S_i=k) = 0 + 4 \times 
+\frac{\pi}{4}= \pi $$ 
+The variance : 
+ $$\Delta = E(S_i^2)-(E(S_i))^2= \sum k^2 P(S_i=k) -m^2 = 16 \times \frac{\pi}{4} - \pi^2 = 4\pi(1-\frac{\pi}{4})$$
+ 
+
+2) unbiased estimates of the mean and variance: 
+
+a) The mean : 
+$$ E(\hat {m}) = E(\frac{1}{N} \sum S_i ) = \frac{1}{N} \sum E(S_i) = N \times \frac{m}{N}=m$$ Hence the mean estimator is unbiased
+
+b) The variance : 
+
+   We have : 
+   $$\hat{\Delta}= \frac{1}{N-1} \sum (S_i^2)-\hat{m}^2)$$ 
+   then : 
+   $$ E(\hat{\Delta})= \frac{1}{N-1} \sum E(S_i^2-\hat{m}^2) = \frac{1}{N-1} [\sum E(S_i^2) - N E(\hat{m}^2)]$$
+
+ and 
+      $$ E(S_i^2)= \Delta + m^2 $$ 
+      $$ E(\hat{m}^2) = Var (\hat{m}) + E(\hat{m}^2) = \frac{1}{N^2}Var(\sum S_i) + m^2$$ 
+      
+ We Know that  {$S_i$} are independents  so : $Var(\sum S_i) = N Var(S_i)=\Delta$
+ 
+ It follows : 
+ $$ E(\hat{m}^2) = \frac{\Delta}{N} + m^2$$
+ Finally : 
+ 
+$$ E(\hat{\Delta}) = \frac{1}{N-1} ( N\Delta +Nm^2 -N(\frac{\Delta}{N}+m^2)) = \frac{1}{N-1} (N\Delta + Nm^2-\Delta -N m^2) = \frac{N-1}{N-1} \Delta = \Delta $$
+
+3) 
+We have : 
+
+$Var( \hat{m})= \frac{\Delta}{N})$ so the typical error is $\sqrt{\frac{\Delta}{N} } = \sqrt{\frac{4\pi-4\pi^2}{N} }  $ 
+
+
+
+\end{document}
