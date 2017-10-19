@@ -1,0 +1,27 @@
+import math
+import random                     
+import matplotlib.pyplot as plt    
+
+n_trials = 15500  #change n               
+n_inside = 0
+inside_x = []
+inside_y = []
+outside_x = []
+outside_y = []
+p_max = 1-math.exp(-1) 
+for i in range(n_trials):
+    x, y = random.uniform(0.0, 1.0), random.uniform(0.0, 1.0) *p_max
+    p_x = 1-math.exp(-x)
+    if  p_x > y: 
+        n_inside += 1
+        inside_x.append(x)
+        inside_y.append(y) 
+    else:
+        outside_x.append(x) 
+        outside_y.append(y) 
+
+
+plt.plot(inside_x, inside_y, 'x' )
+plt.plot (outside_x, outside_y, '.')
+plt.show()
+print ("Integral approx = ", p_max * n_inside / float(n_trials))
